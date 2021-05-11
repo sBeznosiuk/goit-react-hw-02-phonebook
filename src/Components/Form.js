@@ -18,7 +18,7 @@ class Form extends Component {
 
          const refs = {
             name: document.getElementById('name-input'),
-            number: document.getElementById('number-input'),
+            tel: document.getElementById('tel-input'),
 
         }
 
@@ -30,7 +30,7 @@ class Form extends Component {
 
        
         refs.name.value = '';
-        refs.number.value = '';
+        refs.tel.value = '';
 
     }
     render() {
@@ -40,24 +40,25 @@ class Form extends Component {
                 <strong>Name:</strong>
                     <input
                         id="name-input"
-                    type="text"
-                    name="name"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                   title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-                   onChange={this.onHandleChange}
-                    required
+                        type="text"
+                        name="name"
+                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                        title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+                        placeholder="text only"
+                        onChange={this.onHandleChange}
+                        required
                 />
                 </label>
                 <label htmlFor="number">
                 <strong>Number:</strong>
                     <input
-                        id="number-input"
-                    type='number'
-                    name="number"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                   title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-                   onChange={this.onHandleChange}
-                    required
+                        id="tel-input"
+                        type="tel"
+                        name="number"
+                        pattern="^[ 0-9]+$"
+                        onChange={this.onHandleChange}
+                        placeholder="numbers only"
+                        required
                 />
                 </label>
             <button type='submit'>Add contact</button>
