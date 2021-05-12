@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
+import { StyledForm } from './styles';
 class Form extends Component {
   state = {
     name: '',
@@ -32,7 +32,7 @@ class Form extends Component {
   };
   render() {
     return (
-      <form action="submit" onSubmit={this.onHandleSubmit}>
+      <StyledForm action="submit" onSubmit={this.onHandleSubmit}>
         <label htmlFor="name">
           <strong>Name:</strong>
           <input
@@ -59,7 +59,7 @@ class Form extends Component {
           />
         </label>
         <button type="submit">Add contact</button>
-      </form>
+      </StyledForm>
     );
   }
 }

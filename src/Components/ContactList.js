@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactListItem from './ContactListItem';
+import { StyledList } from './styles';
 
 const ContactList = ({ contacts, filter, onClickRemove }) => {
   const renderItems = () => {
@@ -34,7 +35,7 @@ const ContactList = ({ contacts, filter, onClickRemove }) => {
     }
   };
 
-  return <ul>{renderItems()}</ul>;
+  return <StyledList>{renderItems()}</StyledList>;
 };
 
 export default ContactList;
