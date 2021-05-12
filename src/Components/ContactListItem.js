@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const ContactListItem = ({ id, name, number, onClickRemove }) => (
@@ -8,5 +9,12 @@ const ContactListItem = ({ id, name, number, onClickRemove }) => (
     </button>
   </li>
 );
+
+ContactListItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+  onClickRemove: PropTypes.func.isRequired,
+};
 
 export default ContactListItem;

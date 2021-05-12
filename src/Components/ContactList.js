@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ContactListItem from './ContactListItem';
 import { StyledList } from './styles';
@@ -36,6 +37,11 @@ const ContactList = ({ contacts, filter, onClickRemove }) => {
   };
 
   return <StyledList>{renderItems()}</StyledList>;
+};
+
+ContactList.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onClickRemove: PropTypes.func.isRequired,
 };
 
 export default ContactList;

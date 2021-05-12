@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { StyledForm } from './styles';
+import PropTypes from 'prop-types'; // ES6
 class Form extends Component {
   state = {
     name: '',
@@ -63,5 +64,10 @@ class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  addContact: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+};
 
 export default Form;
