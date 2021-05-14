@@ -3,6 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { StyledForm } from './styles';
 import PropTypes from 'prop-types'; // ES6
 class Form extends Component {
+  static propTypes = {
+    addContact: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -22,11 +26,7 @@ class Form extends Component {
       tel: document.getElementById('tel-input'),
     };
 
-    if (!this.props.contacts.includes(this.state)) {
-      this.props.addContact(this.state);
-    } else {
-      alert(`${this.state.name} is already in contacts.`);
-    }
+    this.props.addContact(this.state);
 
     refs.name.value = '';
     refs.tel.value = '';
@@ -64,10 +64,5 @@ class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-  addContact: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-};
 
 export default Form;

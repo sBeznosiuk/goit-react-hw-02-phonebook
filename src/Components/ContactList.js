@@ -20,19 +20,16 @@ const ContactList = ({ contacts, filter, onClickRemove }) => {
           ),
       );
     } else {
-      return contacts.map(
-        contact =>
-          contact.name.includes(filter) && (
-            <ContactListItem
-              onClickRemove={onClickRemove}
-              key={contact.id}
-              id={contact.id}
-              name={contact.name}
-              number={contact.number}
-              contacts={contacts}
-            />
-          ),
-      );
+      return contacts.map(contact => (
+        <ContactListItem
+          onClickRemove={onClickRemove}
+          key={contact.id}
+          id={contact.id}
+          name={contact.name}
+          number={contact.number}
+          contacts={contacts}
+        />
+      ));
     }
   };
 

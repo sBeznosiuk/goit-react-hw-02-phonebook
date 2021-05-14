@@ -10,10 +10,15 @@ class App extends Component {
   };
 
   addContact = contact => {
-    this.setState(prev => ({
-      contacts: [...prev.contacts, contact],
-      name: contact.name,
-    }));
+    const doesExists = this.state.contacts.some(
+      item => item.name === contact.name,
+    );
+
+    doesExists
+      ? alert(`${contact.name} is already in contacts.`)
+      : this.setState(prev => ({
+          contacts: [...prev.contacts, contact],
+        }));
   };
 
   handleFilter = e => {
@@ -31,10 +36,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <ContactForm
-          addContact={this.addContact}
-          contacts={this.state.contacts}
-        />
+        <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter filter={this.handleFilter} />
         <ContactList
